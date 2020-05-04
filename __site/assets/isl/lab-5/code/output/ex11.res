@@ -1,7 +1,7 @@
 DeterministicTunedModel(
     model = LinMod(
             fs = FeatureSelector @ 1…56,
-            lr = LinearRegressor @ 1…38),
+            lr = LinearRegressor @ 1…04),
     tuning = Grid(
             goal = nothing,
             resolution = 10,
@@ -16,10 +16,10 @@ DeterministicTunedModel(
     operation = MLJModelInterface.predict,
     range = NominalRange(
             field = :(fs.features),
-            values = ([:x1], [:x1, :x2], [:x1, :x2, :x3], [:x1, :x2, :x3, :x4], [:x1, :x2, :x3, :x4, :x5], [:x1, :x2, :x3, :x4, :x5, :x6], [:x1, :x2, :x3, :x4, :x5, :x6, :x7], [:x1, :x2, :x3, :x4, :x5, :x6, :x7, :x8], [:x1, :x2, :x3, :x4, :x5, :x6, :x7, :x8, :x9], [:x1, :x2, :x3, :x4, :x5, :x6, :x7, :x8, :x9, :x10])),
+            values = (Symbol[:x1], Symbol[:x1, :x2], Symbol[:x1, :x2, :x3], Symbol[:x1, :x2, :x3, :x4], Symbol[:x1, :x2, :x3, :x4, :x5], Symbol[:x1, :x2, :x3, :x4, :x5, :x6], Symbol[:x1, :x2, :x3, :x4, :x5, :x6, :x7], Symbol[:x1, :x2, :x3, :x4, :x5, :x6, :x7, :x8], Symbol[:x1, :x2, :x3, :x4, :x5, :x6, :x7, :x8, :x9], Symbol[:x1, :x2, :x3, :x4, :x5, :x6, :x7, :x8, :x9, :x10])),
     train_best = true,
     repeats = 1,
     n = nothing,
-    acceleration = ComputationalResources.CPU1{Nothing}(nothing),
-    acceleration_resampling = ComputationalResources.CPU1{Nothing}(nothing),
-    check_measure = true) @ 1…37
+    acceleration = CPU1{Nothing}(nothing),
+    acceleration_resampling = CPU1{Nothing}(nothing),
+    check_measure = true) @ 1…50

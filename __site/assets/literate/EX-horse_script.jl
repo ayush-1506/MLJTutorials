@@ -1,10 +1,9 @@
 # This file was generated, do not modify it.
 
-using MLJ, StatsBase
-MLJ.color_off() # hide
+using MLJ, StatsBase, ScientificTypes
 using HTTP, CSV, DataFrames
-req1 = HTTP.get("http://archive.ics.uci.edu/ml/machine-learning-databases/horse-colic/horse-colic.data")
-req2 = HTTP.get("http://archive.ics.uci.edu/ml/machine-learning-databases/horse-colic/horse-colic.test")
+req1 = HTTP.get("https://archive.ics.uci.edu/ml/machine-learning-databases/horse-colic/horse-colic.data")
+req2 = HTTP.get("https://archive.ics.uci.edu/ml/machine-learning-databases/horse-colic/horse-colic.test")
 header = ["surgery", "age", "hospital_number",
     "rectal_temperature", "pulse",
     "respiratory_rate", "temperature_extremities",
@@ -92,7 +91,7 @@ mtm = machine(tm, Xtrain, ytrain)
 fit!(mtm)
 best_pipe = fitted_params(mtm).best_model
 
-ŷ = MLJ.predict(mtm, Xtrain)
+ŷ = predict(mtm, Xtrain)
 cross_entropy(ŷ, ytrain) |> mean
 
 mcr = misclassification_rate(mode.(ŷ), ytrain)
@@ -101,7 +100,7 @@ println(rpad("MNC mcr:", 10), round(mcr, sigdigits=3))
 @load XGBoostClassifier
 dtc = machine(XGBoostClassifier(), Xtrain, ytrain)
 fit!(dtc)
-ŷ = MLJ.predict(dtc, Xtrain)
+ŷ = predict(dtc, Xtrain)
 cross_entropy(ŷ, ytrain) |> mean
 
 misclassification_rate(mode.(ŷ), ytrain)

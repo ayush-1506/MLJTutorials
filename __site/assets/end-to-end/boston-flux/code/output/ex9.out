@@ -1,0 +1,5 @@
+MethodError: no method matching fit!(::Machine{MLJFlux.NeuralNetworkRegressor{Main.FD_SANDBOX_1443500922528775838.MyNNRegressor,Flux.Optimise.ADAM,typeof(Flux.mse)}}, ::Int64; rows=[358, 422, 334, 476, 1, 441, 12, 115, 240, 104  …  250, 497, 345, 132, 291, 277, 257, 379, 218, 166], vebosity=3)
+Closest candidates are:
+  fit!(!Matched::GLM.AbstractGLM, ::Any; wts, offset, dofit, verbose, maxiter, minstepfac, atol, rtol, start, kwargs...) at /Users/ayush99/.julia/packages/GLM/6V3fS/src/glmfit.jl:388
+  fit!(!Matched::StatsBase.StatisticalModel, ::Any...) at /Users/ayush99/.julia/packages/StatsBase/548SN/src/statmodels.jl:157 got unsupported keyword arguments "rows", "vebosity"
+  fit!(::MLJBase.AbstractMachine; rows, verbosity, force) at /Users/ayush99/.julia/packages/MLJBase/qJs1o/src/machines.jl:146 got unsupported keyword argument "vebosity"

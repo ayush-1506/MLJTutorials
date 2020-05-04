@@ -1,6 +1,6 @@
 5-element Array{Symbol,1}:
- :State
- :Murder
- :Assault
+ :State   
+ :Murder  
+ :Assault 
  :UrbanPop
- :Rape
+ :Rape    

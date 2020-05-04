@@ -1,10 +1,10 @@
 9-element Array{Symbol,1}:
- :MPG
- :Cylinders
+ :MPG         
+ :Cylinders   
  :Displacement
- :Horsepower
- :Weight
+ :Horsepower  
+ :Weight      
  :Acceleration
- :Year
- :Origin
- :Name
+ :Year        
+ :Origin      
+ :Name        
